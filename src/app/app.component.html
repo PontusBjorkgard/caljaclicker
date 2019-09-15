@@ -1,0 +1,10 @@
+<app-clicker [clicks]="clicks"
+             (clickE)="addClick()">
+</app-clicker>
+
+<app-auto-clicker-shop [clicks]="clicks"
+                       (autoClickE)="addClick()"
+                       (buyClickerE)="subtractClicks($event)">
+</app-auto-clicker-shop>
+
+
