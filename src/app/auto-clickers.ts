@@ -2,7 +2,7 @@ export const autoClickers = [
   {
     title: 'Hemleverans',
     effect: 10000,
-    cost: 15
+    cost: 15,
   },
   {
     title: 'Kiljutunnu',

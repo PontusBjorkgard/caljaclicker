@@ -1,10 +1,21 @@
-<app-clicker [clicks]="clicks"
-             (clickE)="addClick()">
-</app-clicker>
+<div class="container">
+    <div class="row">
+        <h1 class="display-4">CaljaClicker</h1>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6">
+                <app-clicker [clicks]="clicks"
+                (clickE)="addClick()">
+                </app-clicker>
+        </div>
+        <div class="col-6">
+                    <app-auto-clicker-shop [clicks]="clicks"
+                                            (autoClickE)="addClick()"
+                                            (buyClickerE)="subtractClicks($event)">
+                    </app-auto-clicker-shop>
+        </div>
+    </div>
+</div>
 
-<app-auto-clicker-shop [clicks]="clicks"
-                       (autoClickE)="addClick()"
-                       (buyClickerE)="subtractClicks($event)">
-</app-auto-clicker-shop>
 
 
