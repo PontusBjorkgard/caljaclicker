@@ -1,6 +1,27 @@
-.auto-clicker {
-
-    &.-unavailable {
-        background-color: black;
+.auto-clickers {
+    &__list {
+        list-style: none;
     }
+    &__clicker {
+        position: relative;
+        padding: 20px 40px;
+        background: #ed1c25;
+        color: #FFFFFF;
+        &.-unavailable {
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.6);
+            }
+        }
+
+        &:not(.-unavailable) {
+            cursor: pointer;
+        }
+    }
+    
 }

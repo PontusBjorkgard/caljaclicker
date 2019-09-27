@@ -1,12 +1,15 @@
-
-<ul>
+<div class="auto-clickers">
+<ul class="auto-clickers__list">
   <li *ngFor="let clicker of clickers" 
       (click)="buyClicker(clicker)" 
       [ngClass]="{
-        'auto-clicker': true,
+        'auto-clickers__clicker': true,
         '-unavailable': clicker.cost > clicks
       }"
   >
-    <span>{{clicker.inInventory}}</span><span>{{ clicker.title }}</span><small>Pris:{{clicker.cost}}</small>
+    <span>{{clicker.inInventory}}</span>
+    <span> {{ clicker | autoClickerUnlocker:clicks }} </span>
+    <small>Pris:{{clicker.cost}}</small>
   </li>
 </ul>
+</div>
