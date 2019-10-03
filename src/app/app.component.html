@@ -10,8 +10,8 @@
         </div>
         <div class="col-6">
                     <app-auto-clicker-shop [clicks]="clicks"
-                                            (autoClickE)="addClick()"
-                                            (buyClickerE)="subtractClicks($event)">
+                                            [clickers]="clickers"
+                                            (buyClickerE)="buyClicker($event)">
                     </app-auto-clicker-shop>
         </div>
     </div>

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { StorageServiceModule } from 'ngx-webstorage-service';
 
 import { AppComponent } from './app.component';
 import { ClickerComponent } from './clicker/clicker.component';
@@ -14,7 +15,8 @@ import { AutoClickerUnlockerPipe } from './auto-clicker-unlocker.pipe';
     AutoClickerUnlockerPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StorageServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]
