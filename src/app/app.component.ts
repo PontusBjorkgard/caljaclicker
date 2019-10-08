@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ClickersService } from './clickers.service';
-/* import { autoClickers } from './auto-clickers'; */
+import { AlertsService } from './alerts.service'; 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,46 +9,34 @@ import { ClickersService } from './clickers.service';
 export class AppComponent {
   title = 'caljaclicker';
   clicks: number;
+  clickEffect:number = 1;
   clickers: any;
-  intervals: any;
+  interval: any;
+  clicksPerSecond: number = 0;
 
-  constructor( private clickersService: ClickersService ) {
+  constructor( private clickersService: ClickersService, private alertsService: AlertsService ) {
     this.clicks = this.clickersService.getClicks();
     this.clickers = this.clickersService.getClickers();
-    this.setupIntervals();
     window.addEventListener( 'click', () => {
       this.clickersService.updateLocalStorage( this.clicks, this.clickers );
     });
   }
 
-  setupIntervals() {
-      this.intervals = [];
-      this.clickers.forEach( clicker => {
-        if ( clicker.inInventory ) {
-          for ( let i = 0; i < clicker.inInventory; i++ ) {
-            this.addInterval( clicker );
-          }
-        } 
-      });
-  }
-
   addClick() {
-    this.clicks += 1;
+    this.clicks += this.clickEffect;
   }
 
   subtractClicks( cost ) {
     this.clicks -= cost;
   }
 
-  addInterval( clicker ) {
-    console.log( this.intervals );
-    this.intervals.push( setInterval( () => {
+  updateInterval( clicker ) {
+    this.clicksPerSecond += clicker.clicksPerSec;
+    clearInterval( this.interval );
+    this.interval = setInterval( () => {
       this.addClick();
-      console.log( 'Click: ' + clicker.title);
-    }, clicker.effect )
-    );
+    }, 1000 / ( this.clicksPerSecond ) );
   }
-
 
   buyClicker(clicker) {
 
@@ -62,7 +50,7 @@ export class AppComponent {
     clicker.cost = Math.ceil( 1.25 * clicker.cost ) ;
 
     // Adds clicker interval
-    this.addInterval( clicker );
+    this.updateInterval( clicker );
   }
 
 

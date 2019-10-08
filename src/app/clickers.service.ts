@@ -7,18 +7,18 @@ import { autoClickers } from './auto-clickers';
 })
 export class ClickersService {
   intervals = [];
-  clicks: number;
+  clicks: number = 0;
   clickers;
 
   constructor( @Inject(LOCAL_STORAGE) private storage: StorageService ) { }
 
   getClickers() {
-    this.clickers = this.storage.get('clickers') == undefined ? autoClickers : this.storage.get('clickers');
-    return this.clickers;
+    //this.clickers = this.storage.get('clickers') == undefined ? autoClickers : this.storage.get('clickers');
+    return autoClickers;
   }
 
   getClicks() {
-    this.clicks = this.storage.get('clicks') == undefined ? 0 : this.storage.get('clicks');
+    //this.clicks = this.storage.get('clicks') == undefined ? 0 : this.storage.get('clicks');
     return this.clicks;
   }
 

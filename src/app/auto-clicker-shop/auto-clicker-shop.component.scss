@@ -22,6 +22,19 @@
         &:not(.-unavailable) {
             cursor: pointer;
         }
+
+        &Desc {
+            display: none;
+            position: absolute;
+            bottom: 70%;
+            right: calc(100% + 30px);
+            background: green;
+            width: 200px;
+        }
+
+        &:not(.-unavailable):hover .auto-clickers__clickerDesc {
+            display: block;
+        }
     }
     
 }

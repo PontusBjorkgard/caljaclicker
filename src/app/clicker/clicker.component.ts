@@ -7,6 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ClickerComponent implements OnInit {
   @Input() clicks;
+  @Input() clicksPerSecond;
   @Output() clickE = new EventEmitter();
   constructor() { }
 
