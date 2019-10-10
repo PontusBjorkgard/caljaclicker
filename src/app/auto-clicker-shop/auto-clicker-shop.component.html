@@ -7,9 +7,9 @@
         '-unavailable': clicker.cost > clicks
       }"
   >
-    <span>{{clicker.inInventory}}</span>
-    <span> {{ clicker | autoClickerUnlocker:clicks }} </span>
-    <small>Pris:{{clicker.cost}}</small>
+    <span class="auto-clickers__clickerInventory">{{clicker.inInventory}}</span>
+    <h4 class="auto-clickers__clickerTitle"> {{ clicker | autoClickerUnlocker:clicks }} </h4>
+    <span class="auto-clickers__clickerPrice kk-util_bold">Pris: {{clicker.cost}}</span>
     <div class="auto-clickers__clickerDesc">
       <p>{{clicker.clicksPerSec}}</p>
       <p>{{clicker.description}}</p>

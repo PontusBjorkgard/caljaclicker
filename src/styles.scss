@@ -1,2 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'owl.carousel/dist/assets/owl.carousel.css';
 @import '~bootstrap/scss/bootstrap.scss';
+@import './assets/scss/variables';
+
+
+body {
+    height: 100vh;
+    background-color: $red;
+}
+
+* {
+    font-family: 'Tinos', serif !important;
+}
+
+.kk-util_ls {
+    letter-spacing: 1.8px;
+}
+
+.kk-util_bold {
+    font-weight: 700;
+}
+
+.kk-banner {
+    height: $bannerHeight;
+    padding: 0 2rem;
+
+    background-color: $blue;
+    color: $gold;
+
+    &__text {
+        line-height: $bannerHeight;
+        font-weight: bold;
+    }
+}
+.kk-content {
+    display:flex;
+    justify-content: center;
+    &__inner {
+        width: 90%;
+    }
+
+    &__clicker {
+        height: calc( 100vh - #{$bannerHeight} );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.owl-carousel {
+    .owl-item:first-child {
+        width: 75% !important;
+    }
+    .owl-item:last-child {
+        width: 25% !important;
+    }
+}

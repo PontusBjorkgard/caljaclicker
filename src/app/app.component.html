@@ -1,20 +1,24 @@
-<div class="container">
+<div class="main-container">
     <app-alerts></app-alerts>
-    <div class="row">
-        <h1 class="display-4">CaljaClicker</h1>
+    <div class="kk-banner">
+        <h4 class="kk-banner__text kk-util_ls kk-util_bold">KALJAKLICKER</h4>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-6">
-                <app-clicker [clicks]="clicks"
-                             [clicksPerSecond]="clicksPerSecond"
-                             (clickE)="addClick()">
-                </app-clicker>
-        </div>
-        <div class="col-6">
-                    <app-auto-clicker-shop [clicks]="clicks"
-                                            [clickers]="clickers"
-                                            (buyClickerE)="buyClicker($event)">
-                    </app-auto-clicker-shop>
+    <div class="kk-content">
+        <div class="kk-content__inner">
+            <owl-carousel [options]="carouselOptions">
+                <div class="item kk-content__clicker">
+                        <app-clicker [clicks]="clicks"
+                                    [clicksPerSecond]="clicksPerSecond"
+                                    (clickE)="addClick()">
+                        </app-clicker>
+                </div>
+                <div class="item kk-content__shop">
+                            <app-auto-clicker-shop [clicks]="clicks"
+                                                    [clickers]="clickers"
+                                                    (buyClickerE)="buyClicker($event)">
+                            </app-auto-clicker-shop>
+                </div>
+            </owl-carousel>
         </div>
     </div>
 </div>

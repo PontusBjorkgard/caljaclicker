@@ -14,6 +14,34 @@ export class AppComponent {
   interval: any;
   clicksPerSecond: number = 0;
 
+  carouselOptions = {
+    nav: true,
+    navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
+    responsiveClass: true,
+    autowidth: true,
+    mouseDrag: false,
+    responsive: {
+      0: {
+        items: 1,
+        nav: true
+      },
+      600: {
+        items: 1,
+        nav: true
+      },
+      1000: {
+        items: 2,
+        nav: true,
+        loop: false
+      },
+      1500: {
+        items: 2,
+        nav: true,
+        loop: false
+      }
+    }
+  }
+
   constructor( private clickersService: ClickersService, private alertsService: AlertsService ) {
     this.clicks = this.clickersService.getClicks();
     this.clickers = this.clickersService.getClickers();
