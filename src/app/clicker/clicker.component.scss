@@ -1,0 +1,53 @@
+@import '../../assets/scss/variables';
+@function stroke($stroke, $color) {
+    $shadow: ();
+    $from: $stroke*-1;
+    @for $i from $from through $stroke {
+     @for $j from $from through $stroke {
+        $shadow: append($shadow, $i*1px $j*1px 0 $color, comma);
+      }
+    }
+    @return $shadow;
+  }
+
+  @mixin stroke($stroke, $color) {
+    text-shadow: stroke($stroke, $color);
+  }
+
+.kk-clicker {   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__current {
+        padding: 1rem 5rem;
+        border-top: 8px double $blue;
+        border-bottom: 8px double $blue;
+        margin-bottom: 0;
+        font-weight: 700;
+        font-size: 5rem;
+        text-align: center;
+        color: #FFFFFF;
+        @include stroke( 5px, $blue );
+
+        @media ( max-width: 700px ) {
+            padding: 1rem 2rem;
+            font-size: 3rem;
+            border-width: 6px;
+            @include stroke( 3px, $blue );
+        }
+    }
+
+    &__button {
+        outline: none;
+        width: 120px;
+        height: 120px;
+        border-radius: 100%;
+        background: $blue;
+        border: 10px solid $red;
+        margin-top: -30px;
+        color: $red;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}

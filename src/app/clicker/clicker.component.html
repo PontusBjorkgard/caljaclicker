@@ -1,3 +1,7 @@
-<h5>{{clicks}}</h5>
-<h6>{{clicksPerSecond | number: '0.1-3'}} kaljaklicks/ sec</h6>
-<button (click)="clickE.emit()">Drick</button>
+<div class="kk-clicker">
+    <h2 class="kk-clicker__current">{{clicks}} LITER</h2>
+    <div>
+        <!-- <h6>{{clicksPerSecond | number: '0.1-3'}} liter/ sec</h6> -->
+        <button class="kk-clicker__button" (click)="clickE.emit()">Drick</button>
+    </div>
+</div>

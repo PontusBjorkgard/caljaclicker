@@ -59,8 +59,24 @@
             position: absolute;
             bottom: 70%;
             right: calc(100% + 30px);
-            background: green;
-            width: 200px;
+            background: $gold;
+            color: $blue;
+            width: 400px;
+            padding: 1rem 2rem;
+
+            &:after {
+                content: "";
+                width: 20px;
+                height: 20px;
+                display: block;
+                position: absolute;
+                right: -20px;
+                bottom: 0;
+                border-left: 10px solid $gold;
+                border-bottom: 10px solid $gold;
+                border-right: 10px solid transparent;
+                border-top: 10px solid transparent;
+            }
         }
 
         &:not(.-unavailable):hover .auto-clickers__clickerDesc {

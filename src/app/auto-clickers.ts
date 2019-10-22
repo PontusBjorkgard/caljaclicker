@@ -1,30 +1,37 @@
 export const autoClickers = [
   {
     title: 'Hemleverans',
-    description: 'Di kör hejm öli från boden',
+    description: 'Hemleverans av socker och jäst',
     clicksPerSec: 0.1,
     cost: 15,
     unlocked: false
   },
   {
-    title: 'Frö',
-    description: 'Man kan så e så växer ett socker/jäst träd',
+    title: 'Fabriksleverans',
+    description: 'Suomen Hiiva Oy och Dan Sukker levererar jäst och socker direkt från fabriken',
     clicksPerSec: 0.2,
     cost: 20,
     unlocked: false
   },
   {
-    title: 'Kari',
-    description: 'Kari komber ti tett o laga rönnbärskilju',
+    title: 'Frö',
+    description: 'Ett magiskt frö man kan så för att växa socker och jäst',
     clicksPerSec: 0.5,
-    cost: 30,
+    cost: 40,
+    unlocked: false
+  },
+  {
+    title: 'Kari',
+    description: 'Spurgu hjälper till med kiljutillverkningen',
+    clicksPerSec: 1,
+    cost: 80,
     unlocked: false
   },
   {
     title: 'Jesus',
-    description: 'Jesus komber o laga vattni ti viini',
-    clicksPerSec: 1,
-    cost: 80,
+    description: 'Jesus gör vatten till kilju',
+    clicksPerSec: 1.5,
+    cost: 160,
     unlocked: false
   }
    

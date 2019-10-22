@@ -29,12 +29,8 @@ export class AppComponent {
         items: 1,
         nav: true
       },
-      1000: {
-        items: 2,
-        nav: true,
-        loop: false
-      },
-      1500: {
+      
+      1100: {
         items: 2,
         nav: true,
         loop: false
