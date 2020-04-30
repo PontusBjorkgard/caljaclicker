@@ -22,7 +22,7 @@
     "@types/jquery": "^3.3.31",
     "@types/owlcarousel": "^1.3.4",
     "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ngx-owl-carousel": "^2.0.7",
     "ngx-webstorage-service": "^4.1.0",
     "owl.carousel": "^2.3.4",
